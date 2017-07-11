@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans 
+                http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+                http://www.springframework.org/schema/context 
+                http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+                http://www.springframework.org/schema/mvc 
+                http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+    <!-- 启用注解支持 -->
+    <!-- 相当于注册了DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter两个bean，
+            配置一些messageconverter。即解决了@Controller注解的使用前提配置 -->
+    <mvc:annotation-driven/>
+
+    <!-- 设置使用注解的类所在的jar包,自动扫描的包名 -->
+    <!-- 该配置项其实也包含了自动注入上述processor的功能，因此当使用<context:component-scan/>后，即可将<context:annotation-config/>省去 -->
+    <context:component-scan base-package="com.dsfy.controller"/>
+
+    <!-- 启用spring mvc 注解 -->
+    <!-- 是对包进行扫描，实现注释驱动Bean定义，同时将bean自动注入容器中使用。即解决了@Controller标识的类的bean的注入和使用。 -->
+    <context:annotation-config/>
+
+
+    <!-- 默认访问跳转到登录页面 -->
+    <mvc:view-controller path="/" view-name="forward:/admin/login"/>
+    <!-- 对静态资源文件的访问 方案一 （二选一） -->
+    <!-- <mvc:default-servlet-handler /> -->
+    <!-- 对静态资源文件的访问 方案二 （二选一） -->
+    <mvc:resources location="/common/" mapping="/common/**"/>
+    <mvc:resources location="/framework/" mapping="/framework/**"/>
+    <mvc:resources location="/system/" mapping="/system/**"/>
+
+    <!-- 完成请求和注解POJO的映射 -->
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>-->
+
+    <!-- 注册gson数据转换器 -->
+    <!-- 采用SpringMVC自带的JSON转换工具，支持@ResponseBody注解 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.json.GsonHttpMessageConverter">
+                    <property name="gson">
+                        <bean class="org.springframework.http.converter.json.GsonFactoryBean">
+                            <!-- JSON的日期格式 -->
+                            <property name="dateFormatPattern" value="yyyy-MM-dd HH:mm:ss"/>
+                        </bean>
+                    </property>
+                    <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+                    <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
+    <!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+         <property name="prefix" value="/"/>
+         <property name="suffix" value=".jsp"/>
+     </bean>-->
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 集成spring异常处理 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!-- <prop key="org.apache.shiro.authz.UnauthorizedException">/system/error</prop> -->
+                <prop key="java.lang.NullPointerException">/error.do</prop>
+                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">/WEB-INF/index.jsp</prop>
+                <prop key="java.lang.Exception">/error.do</prop>
+            </props>
+        </property>
+        <!-- 貌似配置无效 -->
+        <!-- <property name="statusCodes">
+            <props>
+                <prop key="errors/error.jsp">500</prop>
+                <prop key="/404.jsp">404</prop>
+            </props>
+        </property>  -->
+        <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+        <property name="warnLogCategory" value="WARN"/>
+        <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+        <!-- <property name="defaultErrorView" value="errors/error"></property> -->
+        <!-- 默认HTTP状态码 -->
+        <!-- <property name="defaultStatusCode" value="500"></property> -->
+    </bean>
+
+</beans>

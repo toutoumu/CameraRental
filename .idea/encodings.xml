@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/Test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/entity/Banner.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/entity/RejectTime.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/entity/http/Data.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/entity/pay/NotifyMessage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/entity/relation/PK_Camera_Category.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/entity/relation/PK_Lens_Category.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/entity/relation/PK_User_Rental.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/quartz/QuartzJob.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/Extension.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/Header.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/MasAPIException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/ProcessRefund.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/ProcessRefundResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/RefundRequest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/RefundResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/ReturnInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/Sender.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/Service.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/refund/Signature.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/ICameraLensService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/ICommentService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/IMessageService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/IOrderService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/IRejectTimeService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/impl/CameraLensService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/impl/CommentService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/impl/MessageService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/impl/OrderService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/impl/RejectTimeService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/impl/RentalService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/impl/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/service/realm/StatelessAuthcFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/dsfy/util/Constant.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/.bakc/ReadMe" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
