@@ -11,8 +11,11 @@ import java.util.List;
 import java.util.UUID;
 
 /**
+ * server.xml 文件 host 节点添加下面这个
  * <Context docBase="/Users/apple/Desktop/test" path="/CameraRental/image/data" />
  * 用户名 administrator 密码 CongCongadmin888
+ *
+ *
  *
  * @author dell
  */
