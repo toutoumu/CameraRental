@@ -8,14 +8,16 @@ import com.dsfy.entity.equipment.CameraLens;
 import com.dsfy.entity.http.JsonResponse;
 import com.dsfy.service.IBrandService;
 import com.dsfy.util.ValidateUtil;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import java.util.List;
+
+import javax.annotation.Resource;
 
 @Controller
 @RequestMapping(value = "/BrandController", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})

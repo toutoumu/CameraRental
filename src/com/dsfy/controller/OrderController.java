@@ -14,6 +14,8 @@ import com.dsfy.util.UploadUtil;
 import com.dsfy.util.ValidateUtil;
 import com.sdo.mas.common.api.query.order.entity.syn.single.OrderQueryRequest;
 import com.sdo.mas.common.api.query.order.entity.syn.single.OrderQueryResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -166,7 +169,6 @@ public class OrderController {
         orderService.paymentCallBack(message.getOrderNo());
         response.getWriter().write("OK");
     }
-
 
     /**
      * 机主交机相机
@@ -431,7 +433,6 @@ public class OrderController {
         orderService.cancel(order.getOrderNumber());
         return JsonResponse.success("操作成功");
     }
-
 
     /**
      * 租客支付超时(取消订单),这个方法不会被调用
@@ -860,7 +861,6 @@ public class OrderController {
 
         return orderService.updateTime(order.getOrderNumber(), order.getNewObtainTime(), order.getNewReturnTime());
     }
-
 
     /**
      * 正常退款,预先计算退款信息,获取退款信息

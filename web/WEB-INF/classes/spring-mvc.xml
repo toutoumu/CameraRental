@@ -76,12 +76,14 @@
             </props>
         </property>
         <!-- 貌似配置无效 -->
-        <!-- <property name="statusCodes">
+        <!--
+        <property name="statusCodes">
             <props>
                 <prop key="errors/error.jsp">500</prop>
                 <prop key="/404.jsp">404</prop>
             </props>
-        </property>  -->
+        </property>
+        -->
         <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
         <property name="warnLogCategory" value="WARN"/>
         <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->

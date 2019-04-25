@@ -20,6 +20,7 @@ import java.util.List;
  * Banner维护
  */
 @Controller
+@RestController
 @RequestMapping(value = "/BannerController", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 public class BannerController {
     @Resource(name = "BannerService")

@@ -1,0 +1,53 @@
+/**文本框样式 日期框,下拉框加上这个就可以和其他文本框一样大小*/
+.buttonBar {
+    width: 1020px;
+    margin-top: 5px;
+    padding: 3px;
+    text-align: right;
+    /*border: dotted #95B8E7 1px;*/
+    /*background: #F4F4F4;*/
+}
+
+.textbox {
+    height: 18px;
+    margin: 0px;
+    padding: 1px 2px;
+    box-sizing: content-box;
+}
+
+/*表单样式*/
+.form {
+    margin: 0;
+    padding: 5px 30px;
+}
+
+/**对话框标题*/
+.ftitle {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/** 表单一行的样式*/
+.fitem {
+    margin-bottom: 5px;
+}
+
+/**表单文字描述*/
+.fitem label {
+    display: inline-block;
+    text-align: right;
+    width: 80px;
+}
+
+/** 表单输入框*/
+.fitem input {
+    width: 160px;
+}
+
+/** 表单下拉框宽度*/
+.fitem select {
+    width: 160px;
+}
